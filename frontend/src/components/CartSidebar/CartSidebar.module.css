@@ -1,0 +1,84 @@
+.innerContainer {
+    margin: 0 1rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    margin: 1rem 0rem;
+}
+
+aside.sidebar {
+    --sidebar-width: 420px;
+
+    position: fixed;
+    top: 0;
+    right: calc(var(--sidebar-width) * -1);
+    width: var(--sidebar-width);
+    height: 100vh;
+    padding: var(--space-1);
+    padding-top: var(--space-1);
+    background-color: var(--primary-color-light);
+    z-index: 9999;
+    transition: right 300ms ease-in-out;
+    cursor: default;
+    overflow-y: scroll;
+}
+
+aside.sidebar::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+aside.sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: var(--large-border-radius);
+}
+
+aside.sidebar.visible {
+    right: 0;
+    transition: right 300ms ease-in-out;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 9998; 
+}
+
+.totalLabel {
+    font-weight: normal;
+    margin-right: 0.5rem;
+}
+
+.totalPrice {
+    font-size: large;
+    font-weight: 600;
+    margin-top: 1rem; 
+    margin-bottom: 1rem; 
+}
+
+.checkoutBtn {
+    padding: 0.5rem 1rem; 
+    border-radius: 0.5rem;
+    background-color: #8ec4a5;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+

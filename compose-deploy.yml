@@ -1,0 +1,30 @@
+version: '3.4'
+services:
+    api:
+        platform: 'linux/amd64'
+        # --- BEN ---
+        image: 547883578349.dkr.ecr.us-east-1.amazonaws.com/superprice/api
+        # --- MITCH ---
+#        image: 814975730297.dkr.ecr.us-east-1.amazonaws.com/superprice/api
+        ports:
+            - '8080:8080'
+    web:
+        platform: 'linux/amd64'
+        # --- BEN ---
+        image: 547883578349.dkr.ecr.us-east-1.amazonaws.com/superprice/web
+        # --- MITCH ---
+#        image: 814975730297.dkr.ecr.us-east-1.amazonaws.com/superprice/web
+        ports:
+            - '80:3000'
+        environment:
+            # URL of Elastic Beanstalk load balancer
+            # Used by client components to fetch data
+            # --- MITCH ---
+            # CLIENT_API_URL: 'http://superprice-2-env.eba-mszrwiht.us-east-1.elasticbeanstalk.com:8080'
+            # --- BEN ---
+            CLIENT_API_URL: 'http://yay-env.eba-fdeepz2z.us-east-1.elasticbeanstalk.com:8080'
+            # URL used by server components to make internal requests to api service via Docker bridge network
+            API_URL: 'http://api:8080'
+        depends_on:
+            # api must be available for pre-rendering of static pages at build time
+            - api

@@ -1,0 +1,181 @@
+{
+    "products": [
+        {
+            "ID": "000000000000",
+            "name": "Bananas",
+            "category": "Fruit",
+            "storeID": "000000",
+            "storeName": "Aldi",
+            "storePostcode": 3012,
+            "price": 2.75,
+            "unit": "kg",
+            "stock": 100
+        },
+        {
+            "ID": "000000000000",
+            "name": "Bananas",
+            "category": "Fruit",
+            "storeID": "000001",
+            "storeName": "Coles",
+            "storePostcode": 3000,
+            "price": 2.80,
+            "unit": "kg",
+            "stock": 230
+        },
+        {
+            "ID": "000000000000",
+            "name": "Bananas",
+            "category": "Fruit",
+            "storeID": "000002",
+            "storeName": "Woolworths",
+            "storePostcode": 3002,
+            "price": 2.60,
+            "unit": "kg",
+            "stock": 120
+        },
+        {
+            "ID": "000000000000",
+            "name": "Bananas",
+            "category": "Fruit",
+            "storeID": "000003",
+            "storeName": "IGA",
+            "storePostcode": 3002,
+            "price": 2.70,
+            "unit": "kg",
+            "stock": 50
+        },
+        {
+            "ID": "000000000001",
+            "name": "Jazz Apples",
+            "category": "Fruit",
+            "storeID": "000004",
+            "storeName": "Aldi",
+            "storePostcode": 3008,
+            "price": 2.70,
+            "unit": "kg",
+            "stock": 140
+        },
+        {
+            "ID": "000000000001",
+            "name": "Jazz Apples",
+            "category": "Fruit",
+            "storeID": "000005",
+            "storeName": "Coles",
+            "storePostcode": 3001,
+            "price": 2.50,
+            "unit": "kg",
+            "stock": 230
+        },
+        {
+            "ID": "000000000001",
+            "name": "Jazz Apples",
+            "category": "Fruit",
+            "storeID": "000006",
+            "storeName": "Woolworths",
+            "storePostcode": 3009,
+            "price": 2.60,
+            "unit": "kg",
+            "stock": 150
+        },
+        {
+            "ID": "000000000001",
+            "name": "Jazz Apples",
+            "category": "Fruit",
+            "storeID": "000007",
+            "storeName": "IGA",
+            "storePostcode": 3001,
+            "price": 2.40,
+            "unit": "kg",
+            "stock": 110
+        },
+        {
+            "ID": "000000000002",
+            "name": "Milk",
+            "category": "Dairy",
+            "storeID": "000008",
+            "storeName": "Aldi",
+            "storePostcode": 3012,
+            "price": 2.50,
+            "unit": "2L",
+            "stock": 30
+        },
+        {
+            "ID": "000000000002",
+            "name": "Milk",
+            "category": "Dairy",
+            "storeID": "000009",
+            "storeName": "Coles",
+            "storePostcode": 3002,
+            "price": 2.60,
+            "unit": "2L",
+            "stock": 70
+        },
+        {
+            "ID": "000000000002",
+            "name": "Milk",
+            "category": "Dairy",
+            "storeID": "000010",
+            "storeName": "Woolworths",
+            "storePostcode": 3002,
+            "price": 2.60,
+            "unit": "2L",
+            "stock": 50
+        },
+        {
+            "ID": "000000000002",
+            "name": "Milk",
+            "category": "Dairy",
+            "storeID": "000011",
+            "storeName": "IGA",
+            "storePostcode": 3002,
+            "price": 2.80,
+            "unit": "2L",
+            "stock": 50
+        },
+        {
+            "ID": "000000000003",
+            "name": "Milk",
+            "category": "Dairy",
+            "storeID": "000012",
+            "storeName": "Aldi",
+            "storePostcode": 3003,
+            "price": 1.4,
+            "unit": "1L",
+            "stock": 40
+        },
+        {
+            "ID": "000000000003",
+            "name": "Milk",
+            "category": "Dairy",
+            "storeID": "000013",
+            "storeName": "Coles",
+            "storePostcode": 3001,
+            "price": 1.90,
+            "unit": "1L",
+            "stock": 20
+        },
+        {
+            "ID": "000000000003",
+            "name": "Milk",
+            "category": "Dairy",
+            "storeID": "000014",
+            "storeName": "Woolworths",
+            "storePostcode": 3009,
+            "price": 1.60,
+            "unit": "1L",
+            "stock": 30
+        }
+        ,
+        {
+            "ID": "000000000003",
+            "name": "Milk",
+            "category": "Dairy",
+            "storeID": "000015",
+            "storeName": "IGA",
+            "storePostcode": 3002,
+            "price": 1.70,
+            "unit": "1L",
+            "stock": 20
+        }
+    ]
+}

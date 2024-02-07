@@ -1,0 +1,97 @@
+nav.nav {
+    --nav-logo-height: 55px;
+    --main-nav-height: calc(var(--nav-logo-height) + 2 * var(--space-0));
+    --search-nav-height: var(--input-height);
+}
+
+div.main_nav {
+    display: flex;
+    width: 100%;
+}
+
+div.search_nav {
+    margin: 0 var(--space-1);
+}
+
+div.center_container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    width: var(--view-width);
+    max-width: var(--max-width);
+    margin: var(--space-0) var(--space-1) var(--space-0) 0;
+}
+
+a.logo_link {
+    flex-grow: 1;
+}
+
+img.logo {
+    height: var(--nav-logo-height);
+    width: auto;
+}
+
+button.cart_btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-0);
+}
+
+button.cart_btn {
+    height: var(--input-height);
+    background-color: var(--background-color-start);
+    padding: 15px;
+    border-radius: var(--large-border-radius);
+    border: 1px solid var(--border-color);
+}
+
+button.cart_btn svg {
+    width: 20px;
+    height: 20px;
+    color: var(--primary-color);
+}
+
+button.cart_btn p.cart_counter {
+    display: none;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+div.filler {
+    /* Same width as hamburger button to ensure main nav remains centered */
+    width: 134px;
+}
+
+@media (min-width: 540px) {
+    button.cart_btn p.cart_counter {
+        display: block;       
+    }
+}
+
+@media (min-width: 640px) {
+    nav.nav {
+        --nav-logo-height: 60px;
+    }
+}
+
+@media (min-width: 768px) {
+    div.center_container {
+        --nav-logo-height: 75px;
+    }
+}
+
+@media (min-width: 768px) {
+    div.center_container {
+        gap: var(--space-3)
+    }
+    
+    button.account_btn div.text_container {
+        display: flex;
+    }
+}
+
+@media (min-width: 1280px) {
+    div.center_container {
+        margin: var(--space-0) auto;
+    }
+}

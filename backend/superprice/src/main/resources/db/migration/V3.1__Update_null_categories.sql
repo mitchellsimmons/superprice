@@ -1,0 +1,3 @@
+-- UPDATE category
+-- SET ParentCategoryID = COALESCE(ParentCategoryID, 0)
+-- WHERE ParentCategoryID IS NULL;

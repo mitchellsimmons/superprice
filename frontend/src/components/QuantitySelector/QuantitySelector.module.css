@@ -1,0 +1,62 @@
+div.quantity_outer_container {
+    display: flex;
+    gap: 7px;
+    font-size: 14px;
+}
+
+
+div.quantity_outer_container {
+    width: 100%;
+}
+
+div.quantity_container {
+    display: flex;
+}
+
+div.quantity_container button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--border-color);
+    background-color: var(--primary-color-light);
+}
+
+div.quantity_container button:hover {
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+div.quantity_container button.disabled:hover {
+    border: 1px solid var(--disabled-color);
+    background-color: var(--disabled-color);    
+}
+
+div.quantity_container button:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+div.quantity_container button:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+div.quantity_container input {
+    width: 25px;
+    height: 25px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+button.add_to_cart {
+    height: 25px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background-color: var(--primary-color-light);
+    padding: 0 10px;
+}
+
+button.add_to_cart:hover {
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color);
+}

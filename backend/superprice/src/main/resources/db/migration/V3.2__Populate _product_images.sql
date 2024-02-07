@@ -1,0 +1,23 @@
+-- UPDATE product
+-- SET image = FILE_READ('classpath:images/banana.jpg')
+-- WHERE id = 1;
+--
+-- UPDATE product
+-- SET image = FILE_READ('classpath:images/apple.jpg')
+-- WHERE id = 2;
+--
+-- UPDATE product
+-- SET image = FILE_READ('classpath:images/orange.jpg')
+-- WHERE id = 3;
+--
+-- UPDATE product
+-- SET image = FILE_READ('classpath:images/milk.jpg')
+-- WHERE id = 4;
+--
+-- UPDATE product
+-- SET image = FILE_READ('classpath:images/skim_milk.jpg')
+-- WHERE id = 5;
+--
+-- UPDATE product
+-- SET image = FILE_READ('classpath:images/cream.jpg')
+-- WHERE id = 6;

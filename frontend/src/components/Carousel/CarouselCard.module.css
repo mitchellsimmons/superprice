@@ -1,0 +1,14 @@
+article.carousel_card {
+    flex: 1 0 var(--card-width);
+    height: var(--card-width);
+
+    /* Instead of using flex gap, we will use padding
+     * This is to ensure there is space for the box-shadow */
+    box-sizing: border-box;
+    padding: var(--card-box-shadow-radius);
+}
+
+article.carousel_card div.container {
+    /* Make each card a square */
+    aspect-ratio: 1/1;
+}

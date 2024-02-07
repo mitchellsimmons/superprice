@@ -1,0 +1,48 @@
+.carousel {
+    /* Note, we are dynamically updating the card-count via the component, based on the current media size.
+     * Therefore the card-width is a responsive value */
+    --card-width: calc(100% / var(--card-count));
+
+    margin-bottom: var(--space-1);
+    display: flex;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+
+    /* Hack to ensure flex item box shadow is visible despite overflow cutoff on parent container */
+    position: relative;
+    left: calc(-1 * var(--card-box-shadow-radius));
+    width: calc(100% + var(--card-box-shadow-radius) * 2);
+
+    /* Hide scrollbars */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.carousel_selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel_btn {
+    width: 9px;
+    height: 9px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--border-color);
+    cursor: pointer;
+}
+
+.active_btn {
+    background-color: var(--primary-color);
+}
+
+@media (min-width: 1024px) {
+    .carousel {
+        margin-bottom: var(--space-3);
+    }
+}

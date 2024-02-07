@@ -1,0 +1,54 @@
+div.postcode_container {
+    --edit-width: 130px;
+
+    position: relative;
+}
+
+div.postcode_container svg {
+    position: absolute;
+    color: var(--primary-color);
+    pointer-events: none;
+}
+
+div.postcode_container svg.location {
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+div.postcode_container.editing svg.location, div.postcode_container.edited svg.location {
+    left: var(--space-0);
+    transform: translateY(-50%) translateX(0);
+}
+
+div.postcode_container svg.cross,
+div.postcode_container svg.check {
+    width: 13px;
+    height: 13px;
+    top: 50%;
+    right: var(--space-0);
+    transform: translateY(-50%);
+}
+
+input.postcode_input {
+    font-size: 15px;
+    padding: 0 calc(var(--input-height) / 2);
+    width: 0;
+    transition: width ease-in-out 200ms, padding ease-in-out 200ms;
+}
+
+input.postcode_input.editing {
+    width: var(--edit-width);
+    transition: width ease-in-out 200ms, padding ease-in-out 200ms;
+    padding-left: var(--input-height);
+}
+
+@media (min-width: 540px) {
+    input.postcode_input.edited {
+        width: var(--edit-width);
+        transition: width ease-in-out 200ms, padding ease-in-out 200ms;
+        padding-left: var(--input-height);  
+    }
+}

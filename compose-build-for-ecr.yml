@@ -1,0 +1,22 @@
+version: '3.4'
+services:
+    api:
+        platform: 'linux/amd64'
+        build: backend/superprice
+        image: superprice/api
+        ports:
+            - '8080:8080'
+
+    web:
+        platform: 'linux/amd64'
+        build:
+            context: ./frontend
+            args:
+                # Required by nextjs to pre-render static pages at build time
+                API_URL: 'http://host.docker.internal:8080'
+        image: superprice/web
+        ports:
+            - '80:3000'
+        depends_on:
+            # api must be available for pre-rendering of static pages at build time
+            - api

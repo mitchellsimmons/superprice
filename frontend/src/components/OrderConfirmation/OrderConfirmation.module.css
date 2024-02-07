@@ -1,0 +1,79 @@
+.orderConfirmation {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.orderConfirmation {
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.orderHeader {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.orderDetails,
+.deliveryDetails {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.orderConfirmation h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.orderConfirmation h3 {
+    color: #666;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.orderConfirmation h4 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.orderConfirmation p {
+    color: #444;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.orderConfirmation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.orderConfirmation li {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.orderItem {
+    margin-bottom: 5px;
+    /* border-bottom: 1px solid #ddd; */
+    padding-bottom: 5px;
+}
+
+.orderItem b {
+    color: #444;
+    font-weight: 600;
+}

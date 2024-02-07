@@ -1,0 +1,9 @@
+/.idea/
+.DS_STORE
+compose-vars.env
+compose-local-vars.env
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

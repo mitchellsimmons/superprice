@@ -1,0 +1,64 @@
+version: '3.4'
+services:
+    api:
+        platform: 'linux/amd64'
+        # --- BEN ---
+        image: 547883578349.dkr.ecr.us-east-1.amazonaws.com/superprice/api
+        # --- MITCH ---
+        #        image: 814975730297.dkr.ecr.us-east-1.amazonaws.com/superprice/api
+        ports:
+            - '8080:8080'
+        environment:
+            spring.datasource.url: jdbc:mysql://database:3306/superprice?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+            spring.datasource.driverClassName: com.mysql.cj.jdbc.Driver
+            spring.datasource.username: root
+            spring.datasource.password: onehundredpercentconfidentthiswillwork
+        depends_on:
+            database:
+                condition: service_healthy
+
+    web:
+        platform: 'linux/amd64'
+        # --- BEN ---
+        image: 547883578349.dkr.ecr.us-east-1.amazonaws.com/superprice/web
+        # --- MITCH ---
+        # image: 814975730297.dkr.ecr.us-east-1.amazonaws.com/superprice/web
+        environment:
+            # URL of Elastic Beanstalk load balancer
+            # Used by client components to fetch data
+            # --- MITCH ---
+            # CLIENT_API_URL: 'http://superprice-2-env.eba-mszrwiht.us-east-1.elasticbeanstalk.com:8080'
+            # --- BEN ---
+            CLIENT_API_URL: 'http://superprice-env.eba-wqvc3f8z.us-east-1.elasticbeanstalk.com:8080'
+            API_URL: 'http://api:8080'
+        ports:
+            - '80:3000'
+        depends_on:
+            # api must be available for pre-rendering of static pages at build time
+            - api
+
+    database:
+        platform: 'linux/amd64'
+        image: mysql:8.0-oracle
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: superprice
+            MYSQL_ROOT_PASSWORD: onehundredpercentconfidentthiswillwork
+        healthcheck:
+            test: '/usr/bin/mysql --user=root --password=onehundredpercentconfidentthiswillwork --execute "SHOW DATABASES;"'
+            interval: 5s
+            timeout: 2s
+            retries: 100
+        ports:
+            - '3306:3306'
+        volumes:
+            - db:/var/lib/mysql
+
+    adminer:
+        platform: 'linux/amd64'
+        image: adminer
+        restart: always
+        ports:
+            - '9000:8080'
+volumes:
+    db:

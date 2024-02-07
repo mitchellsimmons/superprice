@@ -1,0 +1,67 @@
+version: '3.4'
+services:
+    api:
+        platform: 'linux/amd64'
+        build: backend/superprice/
+        image: 547883578349.dkr.ecr.us-east-1.amazonaws.com/superprice/api
+        ports:
+            - '8080:8080'
+        environment:
+            spring.datasource.url: jdbc:mysql://database:3306/superprice?useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+            spring.datasource.driverClassName: com.mysql.cj.jdbc.Driver
+            spring.datasource.username: root
+            spring.datasource.password: ${DB_PASSWORD}
+        depends_on:
+            database:
+                condition: service_healthy
+
+    web:
+        platform: 'linux/amd64'
+        build:
+
+            context: ./frontend
+            args:
+                # Required by nextjs to pre-render static pages at build time
+                API_URL: 'http://host.docker.internal:8080'
+        image: 547883578349.dkr.ecr.us-east-1.amazonaws.com/superprice/web
+        ports:
+            - '3000:3000'
+        environment:
+            # URL of hosted api service
+            # Used by client components to fetch data
+            # This would need to be replaced by actual host domain (EC2 instance?)
+            # Currently just using localhost for testing
+            CLIENT_API_URL: '${CLIENT_API_URL}'
+            # URL used by server components to make internal requests to api service via Docker bridge network
+            # Usually we would just use http://api:8080 but this is not working??
+            # Instead we can access the api service via the internal localhost of the Docker network
+            API_URL: 'http://host.docker.internal:8080'
+        depends_on:
+            # api must be available for pre-rendering of static pages at build time
+            - api
+
+    database:
+        platform: 'linux/amd64'
+        image: mysql:8.0-oracle
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: superprice
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        healthcheck:
+            test: '/usr/bin/mysql --user=root --password=${DB_PASSWORD} --execute "SHOW DATABASES;"'
+            interval: 5s
+            timeout: 2s
+            retries: 100
+        ports:
+            - '3306:3306'
+        volumes:
+            - db:/var/lib/mysql
+
+    adminer:
+        platform: 'linux/amd64'
+        image: adminer
+        restart: always
+        ports:
+            - '9000:8080'
+volumes:
+    db:
