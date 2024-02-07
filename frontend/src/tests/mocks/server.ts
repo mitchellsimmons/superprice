@@ -1,6 +1,9 @@
 import { setupServer } from 'msw/node';
 import { rest } from 'msw';
 
+process.env.API_URL = 'http://localhost:8080';
+process.env.CLIENT_API_URL = 'http://localhost:8080';
+
 // TODO: JSON format example - NOT FINAL FORMAT!!!
 
 const mockInventoryProductId1 = [
