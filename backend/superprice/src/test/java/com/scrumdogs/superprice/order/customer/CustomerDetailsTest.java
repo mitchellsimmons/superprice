@@ -27,7 +27,7 @@ public class CustomerDetailsTest {
         this.phone = "61372786323";
         this.address = "3/30 Scrumdog Lane";
         this.postcode = "3003";
-        this.deliveryDate = "2023-12-31";
+        this.deliveryDate = "3023-12-31";
         this.deliveryWindowStart = "16:00";
         this.customMessage = "Just yeet it in the general vicinity of the property - aka Amazon S.O.P.";
     }
@@ -307,7 +307,7 @@ public class CustomerDetailsTest {
     @Test
     public void shouldThrowException_whenDeliveryDateInPast() {
         //Invalidate delivery date by making it in the past.
-        this.deliveryDate = this.deliveryDate.replace("2023", "1989");
+        this.deliveryDate = this.deliveryDate.replace("3023", "1989");
 
         @SuppressWarnings("unused")
         InvalidCustomerDetailsException ex = assertThrows(InvalidCustomerDetailsException.class, () ->
