@@ -2,6 +2,7 @@
 
 const POSTCODES_REQUEST = '/v1/postcodes';
 const POSTCODE_KEY = 'SUPERPRICE_POSTCODE';
+const DEFAULT_POSTCODE = 3000;
 
 // --- Interfaces ---
 
@@ -12,13 +13,13 @@ export interface Postcode {
 // --- Utils ---
 
 // Get postcode from localStorage
-// Returns null if not set
+// Returns DEFAULT_POSTCODE if not set
 export const getPostcodeFromStorage = () => {
     if (typeof window !== 'undefined') {
         const postcodeStr = localStorage.getItem(POSTCODE_KEY);
-        return postcodeStr ? JSON.parse(postcodeStr) : null;
+        return postcodeStr ? JSON.parse(postcodeStr) : DEFAULT_POSTCODE;
     } else {
-        return null;
+        return DEFAULT_POSTCODE;
     }
 };
 
