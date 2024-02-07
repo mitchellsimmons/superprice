@@ -44,7 +44,9 @@ const DeliveryForm = ({ onOrderConfirmation }: DeliveryFormProps) => {
 
     function DummyFunction() {}
 
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleInputChange = (
+        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
@@ -65,26 +67,29 @@ const DeliveryForm = ({ onOrderConfirmation }: DeliveryFormProps) => {
 
         //https://eoi0wsczk10g3io.m.pipedream.net - for testing post
 
-        const response = await fetch('http://localhost:8080/v1/cart/checkout', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: formData.name,
-                email: formData.email,
-                phone: formData.phone,
-                address: formData.address,
-                postcode: formData.postcode,
-                deliveryDate: formData.deliveryDate,
-                deliveryWindowStart: formData.deliveryTime,
-                customMessage: formData.customMessage,
-                items: cartItems.map((item) => ({
-                    inventoryID: item.id,
-                    quantity: item.quantity,
-                })),
-            }),
-        });
+        const response = await fetch(
+            process.env.CLIENT_API_URL + '/v1/cart/checkout',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    address: formData.address,
+                    postcode: formData.postcode,
+                    deliveryDate: formData.deliveryDate,
+                    deliveryWindowStart: formData.deliveryTime,
+                    customMessage: formData.customMessage,
+                    items: cartItems.map((item) => ({
+                        inventoryID: item.id,
+                        quantity: item.quantity,
+                    })),
+                }),
+            }
+        );
 
         const messageElement = document.getElementById('message');
         if (messageElement) {
@@ -108,7 +113,7 @@ const DeliveryForm = ({ onOrderConfirmation }: DeliveryFormProps) => {
     return (
         <div
             style={{ display: 'flex', justifyContent: 'space-between' }}
-            data-testid="delivery-form"
+            data-testid='delivery-form'
         >
             <div
                 style={{
@@ -122,11 +127,11 @@ const DeliveryForm = ({ onOrderConfirmation }: DeliveryFormProps) => {
                     <h2>Delivery Details</h2>
                     <form onSubmit={handleSubmit}>
                         <div style={{ margin: '20px 20px 20px 20px' }}>
-                            <label htmlFor="name">Name:</label>
+                            <label htmlFor='name'>Name:</label>
                             <input
-                                type="text"
-                                id="name"
-                                name="name"
+                                type='text'
+                                id='name'
+                                name='name'
                                 value={formData.name}
                                 onChange={handleInputChange}
                                 required
@@ -134,11 +139,11 @@ const DeliveryForm = ({ onOrderConfirmation }: DeliveryFormProps) => {
                             />
                         </div>
                         <div style={{ margin: '20px 20px 20px 20px' }}>
-                            <label htmlFor="address">Address:</label>
+                            <label htmlFor='address'>Address:</label>
                             <input
-                                type="text"
-                                id="address"
-                                name="address"
+                                type='text'
+                                id='address'
+                                name='address'
                                 value={formData.address}
                                 onChange={handleInputChange}
                                 required
@@ -146,11 +151,11 @@ const DeliveryForm = ({ onOrderConfirmation }: DeliveryFormProps) => {
                             />
                         </div>
                         <div style={{ margin: '20px 20px 20px 20px' }}>
-                            <label htmlFor="email">Email:</label>
+                            <label htmlFor='email'>Email:</label>
                             <input
-                                type="text"
-                                id="email"
-                                name="email"
+                                type='text'
+                                id='email'
+                                name='email'
                                 value={formData.email}
                                 onChange={handleInputChange}
                                 required
@@ -158,11 +163,11 @@ const DeliveryForm = ({ onOrderConfirmation }: DeliveryFormProps) => {
                             />
                         </div>
                         <div style={{ margin: '20px 20px 20px 20px' }}>
-                            <label htmlFor="phone">Phone:</label>
+                            <label htmlFor='phone'>Phone:</label>
                             <input
-                                type="text"
-                                id="phone"
-                                name="phone"
+                                type='text'
+                                id='phone'
+                                name='phone'
                                 value={formData.phone}
                                 onChange={handleInputChange}
                                 required
@@ -170,11 +175,11 @@ const DeliveryForm = ({ onOrderConfirmation }: DeliveryFormProps) => {
                             />
                         </div>
                         <div style={{ margin: '20px 20px 20px 20px' }}>
-                            <label htmlFor="postcode">Postcode:</label>
+                            <label htmlFor='postcode'>Postcode:</label>
                             <input
-                                type="text"
-                                id="postcode"
-                                name="postcode"
+                                type='text'
+                                id='postcode'
+                                name='postcode'
                                 value={formData.postcode}
                                 onChange={handleInputChange}
                                 required
@@ -182,69 +187,77 @@ const DeliveryForm = ({ onOrderConfirmation }: DeliveryFormProps) => {
                             />
                         </div>
                         <div style={{ margin: '20px 20px 20px 20px' }}>
-                            <label htmlFor="deliveryDate">Delivery Date:</label>
+                            <label htmlFor='deliveryDate'>Delivery Date:</label>
                             <select
-                                id="deliveryDate"
-                                name="deliveryDate"
+                                id='deliveryDate'
+                                name='deliveryDate'
                                 value={formData.deliveryDate}
                                 onChange={handleSelectionChange}
                                 required
                                 style={{ marginLeft: '10px' }}
                                 className={styles.drop_down}
                             >
-                                <option value="" disabled>
+                                <option value='' disabled>
                                     Select a date
                                 </option>
                                 {nextFiveDays.map((date) => (
                                     <option key={date} value={date}>
-                                        {new Date(date).toLocaleDateString('en-AU', {
-                                            year: 'numeric',
-                                            month: 'long',
-                                            day: 'numeric',
-                                        })}
+                                        {new Date(date).toLocaleDateString(
+                                            'en-AU',
+                                            {
+                                                year: 'numeric',
+                                                month: 'long',
+                                                day: 'numeric',
+                                            }
+                                        )}
                                     </option>
                                 ))}
                             </select>
                         </div>
                         <div style={{ margin: '20px 20px 20px 20px' }}>
-                            <label htmlFor="deliveryTime">Delivery Time:</label>
+                            <label htmlFor='deliveryTime'>Delivery Time:</label>
                             <select
-                                id="deliveryTime"
-                                name="deliveryTime"
+                                id='deliveryTime'
+                                name='deliveryTime'
                                 value={formData.deliveryTime}
                                 onChange={handleSelectionChange}
                                 required
                                 style={{ marginLeft: '10px' }}
                                 className={styles.drop_down}
                             >
-                                <option value="" disabled>
+                                <option value='' disabled>
                                     Select a delivery window
                                 </option>
-                                <option value="00:00">12 AM - 4 AM</option>
-                                <option value="04:00">4 AM - 8 AM</option>
-                                <option value="8:00">8 AM - 12 PM</option>
-                                <option value="12:00">12 PM - 4 PM</option>
-                                <option value="16:00">4 PM - 8 PM</option>
-                                <option value="20:00">8 PM - 12 PM</option>
+                                <option value='00:00'>12 AM - 4 AM</option>
+                                <option value='04:00'>4 AM - 8 AM</option>
+                                <option value='8:00'>8 AM - 12 PM</option>
+                                <option value='12:00'>12 PM - 4 PM</option>
+                                <option value='16:00'>4 PM - 8 PM</option>
+                                <option value='20:00'>8 PM - 12 PM</option>
                             </select>
                         </div>
                         <div style={{ margin: '20px 20px 20px 20px' }}>
-                            <label htmlFor="customMessage">Custom Message:</label>
+                            <label htmlFor='customMessage'>
+                                Custom Message:
+                            </label>
                             <input
-                                type="text"
-                                id="customMessage"
-                                name="customMessage"
+                                type='text'
+                                id='customMessage'
+                                name='customMessage'
                                 value={formData.customMessage}
                                 onChange={handleInputChange}
                                 style={{ marginLeft: '10px' }}
                             />
                         </div>
                         <div className={styles.form_button_container}>
-                            <button type="submit" className={styles.form_button}>
+                            <button
+                                type='submit'
+                                className={styles.form_button}
+                            >
                                 Submit
                             </button>
                         </div>
-                        <div id="message" className={styles.message}></div>
+                        <div id='message' className={styles.message}></div>
                     </form>
                 </div>
             </div>
@@ -264,11 +277,13 @@ const DeliveryForm = ({ onOrderConfirmation }: DeliveryFormProps) => {
                             ))}
                         </div>
                         {totalPrice > 0 && (
-                        <div className={styles.totalPrice}>
-                            <span className={styles.totalLabel}>Total: </span>
-                            ${(totalPrice / 100).toFixed(2)}
-                        </div>
-                    )}
+                            <div className={styles.totalPrice}>
+                                <span className={styles.totalLabel}>
+                                    Total:{' '}
+                                </span>
+                                ${(totalPrice / 100).toFixed(2)}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
