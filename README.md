@@ -1,36 +1,22 @@
-# RMIT COSC2299 SEPT Major Project - SuperPrice
+# SuperPrice
 
-# Scrumdog Millionaires
+A fully responsive (mock) website developed for SuperPrice, an online price comparison and delivery service for purchasing groceries from local supermarkets.
+Developed as part of my Software Engineering Processes and Tools course at RMIT University by a six member team.
+A Scrum framework, consisting of two major sprints (outlined below) was used to guide development.
 
-## Group-P3-03
+The application was deployed to AWS Elastic Beanstalk via dockerisation but is not currently live.
+Local build instructions can be found below.
 
 ## Members
 
--   Marty Lawrence (s3788137)
--   Ruschia Mackay (s3849216)
--   Benjamin Grayland (s3927837)
--   Geordie Elliot-Kerr (s3465651)
--   Mitchell Simmons (s3530190)
--   Maximus Dionyssopouloss (s3943811)
+-   Mitchell Simmons
+-   Marty Lawrence
+-   Ruschia Mackay
+-   Benjamin Grayland
+-   Geordie Elliot-Kerr
+-   Maximus Dionyssopouloss
 
-## Records
-
--   [Github repository](https://github.com/cosc2299-sept-2023/team-project-group-p03-03)
--   [Github Project Board](https://github.com/orgs/cosc2299-sept-2023/projects/141)
--   [Microsoft Teams](https://teams.microsoft.com/l/team/19%3aaszFJ-04LkgJ49sS52bEX8hA2xV7zLYM8M3jiiI0JXE1%40thread.tacv2/conversations?groupId=4183e05b-6197-4736-b72d-8ad1618c20e3&tenantId=d1323671-cdbe-4417-b4d4-bdb24b51316b)
--   [Sharepoint](https://rmiteduau.sharepoint.com/sites/ScrumdogMillionaires)
--   [AWS deployment video](https://rmiteduau-my.sharepoint.com/:v:/g/personal/s3927837_student_rmit_edu_au/EXnsbXfOWz1Grdxj8YHyjHIBPzNpYYBdgYPN7icKHdiuXw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=nYCqcq)
-
-### Milestone 3 contribution videos
-
--   [Benjamin Grayland (s3927837)]()
--   [Maximus Dionyssopoulos (s3943811)](https://rmiteduau-my.sharepoint.com/:v:/g/personal/s3943811_student_rmit_edu_au/ESPmg_Uqrj5Hoor-qsEDxw8BfYDeMlhaAEh7odveQoooRQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=Mc9O6P)
--   [Mitchell Simmons (s3530190)](https://rmiteduau-my.sharepoint.com/:v:/g/personal/s3530190_student_rmit_edu_au/EZct7XoLE_tPkbx8hCvjI7YBQ6AkWzCQXw-PZnSwm2swOw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19&e=9iuOzr)
--   [Geordie Elliot-Kerr (s3465651)](https://rmiteduau-my.sharepoint.com/:v:/g/personal/s3465651_student_rmit_edu_au/EZOP5286UQ1Ml5PQrdvAXiYB2-2w7zhbW8O5g9wgAJle1A?e=MNvDIa)
--   [Ruschia Mackay (s3849216)](https://rmiteduau-my.sharepoint.com/personal/s3849216_student_rmit_edu_au/_layouts/15/stream.aspx?id=%2Fpersonal%2Fs3849216%5Fstudent%5Frmit%5Fedu%5Fau%2FDocuments%2FRecordings%2FMeeting%20with%20Ruschia%20MacKay%2D20231008%5F230112%2DMeeting%20Recording%2Emp4&ga=1)
--   [Marty Lawrence (s3788137)](https://rmiteduau-my.sharepoint.com/:v:/r/personal/s3788137_student_rmit_edu_au/Documents/Recording-20231008_233108.webm?csf=1&web=1&e=Y8TwHR&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19)
-
-## Code documentation
+## Sprints
 
 ### Sprint 2 - 08/10/23
 
@@ -73,9 +59,7 @@ User Stories completed during Sprint 1:
 
 # Using SuperPrice
 
-The SuperPrice application has been deployed to the AWS Elastic Beanstalk — contact the Scrumdog Millionaires to arrange a demonstration.
-
-If you would like to build and run the system locally, please follow the instructions below:
+If you would like to build and run the application locally, please follow the instructions below:
 
 ## Setup your environment
 
@@ -86,28 +70,20 @@ You will need to have in your system
 -   Apache Maven
 -   IDE or Editor
 
-Other tools will be required to complete the project (e.g., Docker), for full details see:
-
--   _/frontend/package.json_
--   _/backend/superprice/pom.xml_
--   _/backend/superprice/compose.yaml_
-
 ## Building and running the application locally
 
--   Start the backend server in your IDE (Run SuperPrice Application)
+-   cd into backend/superprice
+-   Start the backend server with "./mvnw spring-boot:run"
     -   If encountering FlyWay migration errors, you may need to locally delete the H2 DB and re-run
 -   cd into frontend/
 -   Build the app with "npm run build"
 -   Start the app with "npm run start"
-    -   Please note "npm run dev" will cause NextJS to compile pages at request time, which is not a true representation of the production build.
 -   go to [localhost:3000](localhost:3000) for the landing page.
 
 ## Building and running the application to/from Docker images
 
-Application images for running as Docker containers are available on the AWS Elastic Container Registry.
-Contact a member of the Scrumdog Millionaires to arrange a deployment demonstration, or if you have access to the registry you can follow the instructions below:
-
--   Update the ECR_DOMAIN variable on the compose.sh file to your repository, or one you have access to.
+-   Setup a repository on the AWS Elastic Container Registry.
+-   Update the ECR_DOMAIN variable on the compose.sh file to your repository.
 -   Ensure your AWS SSH and CLI credentials are up to date.
 -   Run `aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $ECR_DOMAIN`
 
