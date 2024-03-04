@@ -97,6 +97,7 @@ You will need to have in your system
     -   DB_PASSWORD=ANY_PASSWORD_YOU_CHOOSE
     -   CLIENT_API_URL=http://localhost:8080
     -   API_URL=http://localhost:8080
+
     -   spring.h2.console.enabled=false
 -   Run `docker compose -f compose.yml --env-file compose-local-vars.env up`
 -   Visit http://localhost:3000
